@@ -1,0 +1,9 @@
+{
+    "python.pythonPath": "app\\venv\\Scripts\\python.exe",
+    "code-runner.executorMap": {
+        "python": "app\\venv\\Scripts\\python.exe -u",
+    },
+    "python.analysis.extraPaths": [
+        "app"
+    ]
+}
