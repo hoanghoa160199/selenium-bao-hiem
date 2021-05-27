@@ -93,25 +93,32 @@ def main():
     test18()  # test tìm kiếm loại người dùng// pass
     test19()  # test tìm kiếm địa chỉ người dùng// pass
     test20()  # test tìm kiếm loại bảo hiểm// pass
+
 # Từ test21-test24 là cho phần bảo hiểm với các giá trị tìm có kết quả và tìm không có kết quả
     # Từ test21 và test22 là cho phần bảo hiểm với các giá trị tìm có kết quả
     test21()  # test tìm kiếm loại bảo hiểm // pass
     test22()  # test tìm kiếm giá bảo hiểm // pass
+
     # Từ test21 và test22 là cho phần bảo hiểm với các giá trị tìm không có kết quả
     test23()  # test tìm kiếm loại bảo hiểm // pass
     test24()  # test tìm kiếm giá bảo hiểm // pass
+
     # test25 và test 26 sửa thành công giá cho bảo hiểm
     test25()  # test sửa tên bảo hiểm
     test26()  # test sửa giá bảo hiểm
+
     # test27 và test 28 sửa nhưng ấn cancel để kiểm tra giá trị  bảo hiểm không thay đỏi
     test27()  # test sửa tên bảo hiểm
     test28()  # test giá tên bảo hiểm
+
 # Từ test29-test30 là cho phần báo cáo với các giá trị tìm có kết quả và tìm không có kết quả
     test29()  # test  lọc theo ngày tháng năm và có kết quả
     test30()  # test  lọc theo ngày tháng năm và không có kết quả
+
 # check paging ở page người dùng và giao dịch
     test31()  # check paging ở page  giao dịch
     test32()  # check paging ở page người dùng
+
 # check paging ở page người dùng và giao dịch khi tìm kiếm
     test33()  # check paging ở page  giao dịch khi tìm kiếm loại người dùng
     test34()  # check paging ở page  giao dịch khi tìm kiếm địa chỉ người dùng
@@ -120,7 +127,8 @@ def main():
     test37()  # check paging ở page  người dùng khi tìm kiếm loại người dùng
     test38()  # check paging ở page  người dùng khi tìm kiếm địa chỉ người dùng
     test39()  # check paging ở page  người dùng khi tìm kiếm loại bảo hiểm
-
+    test40()
+    test41()
 
 # Từ test29-test30 là cho phần báo cáo với các giá trị tìm có kết quả và tìm không có kết quả
 
@@ -134,11 +142,12 @@ def test1():
     driver.get(URL)
     try:
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])', 1, 1)
-        send_keys(driver, 'find_element_by_xpath', '(//*[@class="ant-input"])', 1, 2, 'a')
+        send_keys(driver, 'find_element_by_xpath', '(//*[@class="ant-input"])', 1, 2, 'Linh')
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-primary ant-btn-sm"])', 1, 3)
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])', 1, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 1, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -156,6 +165,7 @@ def test2():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[2]', 2, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 2, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -173,6 +183,7 @@ def test3():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[3]', 3, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 3, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -190,6 +201,7 @@ def test4():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[4]', 4, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 4, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -207,6 +219,7 @@ def test5():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[5]', 5, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 5, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -224,6 +237,7 @@ def test6():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[6]', 6, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 6, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -243,6 +257,7 @@ def test7():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])', 7, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 7, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -260,6 +275,7 @@ def test8():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[2]', 8, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 8, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -277,6 +293,7 @@ def test9():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[3]', 9, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 9, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -294,6 +311,7 @@ def test10():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[4]', 10, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 10, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -311,6 +329,7 @@ def test11():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[5]', 11, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 11, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -328,6 +347,7 @@ def test12():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[6]', 12, 4)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 12, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -348,6 +368,7 @@ def test13():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])', 13, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 13, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -366,6 +387,7 @@ def test14():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[2]', 14, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 14, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -403,6 +425,7 @@ def test16():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[4]', 16, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 16, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -423,6 +446,7 @@ def test17():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])', 17, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 17, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -441,6 +465,7 @@ def test18():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[2]', 18, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 18, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -459,6 +484,7 @@ def test19():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[3]', 19, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 19, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -477,6 +503,7 @@ def test20():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[4]', 20, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 20, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -498,6 +525,7 @@ def test21():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])', 21, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 21, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -516,6 +544,7 @@ def test22():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])', 22, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 22, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -535,6 +564,7 @@ def test23():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])', 23, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 23, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -553,6 +583,7 @@ def test24():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[2]', 24, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 24, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -579,6 +610,7 @@ def test25():
         send_keys(driver, 'find_element_by_id', 'nametype', 25, 5, 'Bảo hiểm só 1')
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-primary"])', 25, 5)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -604,6 +636,7 @@ def test26():
         send_keys(driver, 'find_element_by_id', 'price', 26, 6, '1000000')
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-primary"])', 26, 7)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -629,6 +662,7 @@ def test27():
         send_keys(driver, 'find_element_by_id', 'nametype', 27, 6, 'Bảo hiểm só 1234556')
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn"])', 27, 7)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -654,6 +688,7 @@ def test28():
         send_keys(driver, 'find_element_by_id', 'price', 28, 6, '1000000999')
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn"])', 28, 7)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -676,6 +711,7 @@ def test29():
         send_keys(driver, 'find_element_by_xpath', '(//input[@placeholder="End date"])', 29, 5, '2022-05-29')
         send_keys_enter(driver, 'find_element_by_xpath', '(//input[@placeholder="End date"])', 29, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -696,6 +732,7 @@ def test30():
         send_keys(driver, 'find_element_by_xpath', '(//input[@placeholder="End date"])', 30, 5, '2021-05-29')
         send_keys_enter(driver, 'find_element_by_xpath', '(//input[@placeholder="End date"])', 30, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -710,6 +747,7 @@ def test31():
         click(driver, 'find_element_by_id', 'rc-tabs-0-tab-1', 31, 1)
         click(driver, 'find_element_by_xpath', '(//*[@rel="nofollow"])[2]', 31, 2)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -724,6 +762,7 @@ def test32():
         click(driver, 'find_element_by_id', 'rc-tabs-0-tab-2', 32, 1)
         click(driver, 'find_element_by_xpath', '(//*[@rel="nofollow"])[2]', 32, 2)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -742,6 +781,7 @@ def test33():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[2]', 33, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 33, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -760,6 +800,7 @@ def test34():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[3]', 34, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 34, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -778,6 +819,7 @@ def test35():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[4]', 35, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 35, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -796,6 +838,7 @@ def test36():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[4]', 36, 5)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 36, 6)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -815,6 +858,7 @@ def test37():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[2]', 37, 6)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 37, 7)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -834,6 +878,7 @@ def test38():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[3]', 38, 6)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 38, 7)
     except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
@@ -853,6 +898,79 @@ def test39():
         click(driver, 'find_element_by_xpath', '(//*[@role="button"])[4]', 39, 6)
         click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-sm"])', 39, 7)
     except Exception as error:
+        driver.close()
+        return error.__class__.__name__
+    driver.close()
+    return True
+
+
+def test40():
+    URL = 'http://localhost:3000/'
+    driver = webdriver.Chrome(r"app\chromedriver\chromedriver.exe")
+    driver.maximize_window()
+    driver.get(URL)
+    try:
+        click(driver, 'find_element_by_id', 'rc-tabs-0-tab-3', 40, 1)
+        hover_to(driver, 'find_element_by_xpath', '(//*[@class="anticon anticon-menu ant-dropdown-trigger"])', 40, 2)
+        time.sleep(1)
+        click(driver, 'find_element_by_xpath',
+              '//li[contains(@class,"ant-dropdown-menu-item ant-dropdown-menu-item-only-child")]', 40, 3)
+        time.sleep(1)
+        click(driver, 'find_element_by_id', 'nametype', 40, 4)
+        value = get_value(driver, 'find_element_by_id', 'nametype')
+        time.sleep(1)
+        clear(driver, 'find_element_by_id', 'nametype', 40, 5)
+        send_keys(driver, 'find_element_by_id', 'nametype', 40, 6, 'Bảo hiểm só 100')
+        click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-primary"])', 40, 7)
+        hover_to(driver, 'find_element_by_xpath', '(//*[@class="anticon anticon-menu ant-dropdown-trigger"])', 40, 8)
+        time.sleep(1)
+        click(driver, 'find_element_by_xpath',
+              '//li[contains(@class,"ant-dropdown-menu-item ant-dropdown-menu-item-only-child")]', 40, 9)
+        time.sleep(1)
+        click(driver, 'find_element_by_id', 'nametype', 40, 10)
+        time.sleep(1)
+        clear(driver, 'find_element_by_id', 'nametype', 40, 11)
+        send_keys(driver, 'find_element_by_id', 'nametype', 40, 12, value)
+        click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-primary"])', 40, 13)
+    except Exception as error:
+        driver.close()
+        return error.__class__.__name__
+    driver.close()
+    return True
+
+# test case sửa giá thành công bảo hiểm
+
+
+def test41():
+    URL = 'http://localhost:3000/'
+    driver = webdriver.Chrome(r"app\chromedriver\chromedriver.exe")
+    driver.maximize_window()
+    driver.get(URL)
+    try:
+        click(driver, 'find_element_by_id', 'rc-tabs-0-tab-3', 41, 1)
+        hover_to(driver, 'find_element_by_xpath', '(//*[@class="anticon anticon-menu ant-dropdown-trigger"])', 41, 2)
+        time.sleep(1)
+        click(driver, 'find_element_by_xpath',
+              '//li[contains(@class,"ant-dropdown-menu-item ant-dropdown-menu-item-only-child")]', 41, 3)
+        time.sleep(1)
+        click(driver, 'find_element_by_id', 'price', 41, 4)
+        time.sleep(1)
+        clear(driver, 'find_element_by_id', 'price', 41, 5)
+        send_keys(driver, 'find_element_by_id', 'price', 41, 6, '100000000')
+        click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-primary"])', 41, 7)
+        value = get_value(driver, 'find_element_by_id', 'nametype')
+        hover_to(driver, 'find_element_by_xpath', '(//*[@class="anticon anticon-menu ant-dropdown-trigger"])', 41, 8)
+        time.sleep(1)
+        click(driver, 'find_element_by_xpath',
+              '//li[contains(@class,"ant-dropdown-menu-item ant-dropdown-menu-item-only-child")]', 41, 9)
+        time.sleep(1)
+        click(driver, 'find_element_by_id', 'price', 41, 10)
+        time.sleep(1)
+        clear(driver, 'find_element_by_id', 'price', 41, 11)
+        send_keys(driver, 'find_element_by_id', 'price', 41, 12, 'value')
+        click(driver, 'find_element_by_xpath', '(//*[@class="ant-btn ant-btn-primary"])', 41, 13)
+    except Exception as error:
+        driver.close()
         return error.__class__.__name__
     driver.close()
     return True
